@@ -151,30 +151,64 @@ view: dataloopdaily {
   }
 
   measure: count {
-    label: "Account Count"
     type: count
-    drill_fields: [detail*]
+    drill_fields: []
   }
+
+  measure: total_api_calls_sum {
+    type: sum
+    sql: ${api_calls_sum} ;;
+  }
+
+  measure: total_faas_usage_services {
+    type: sum
+    sql: ${faas_usage_services} ;;
+  }
+  measure: total_storage_total_persist {
+    type: sum
+    sql: ${storage_total_persist} ;;
+  }
+
+  measure: total_ui_hours_sum {
+    type: sum
+    sql: ${ui_hours_sum} ;;
+  }
+
+  measure: total_annotations {
+    type: sum
+    sql: ${annotations} ;;
+  }
+
+  measure: total_items_annotated {
+    type: sum
+    sql: ${items_total_annotated} ;;
+  }
+
+#  measure: count {
+#    label: "Account Count"
+#    type: count
+#    drill_fields: [detail*]
+#  }
   # ----- Sets of fields for drilling ------
-  set: detail {
-    fields: [
-      account_id,
-      account_name,
-      storage_total_persist,
-      faas_usage_global_services,
-      faas_usage_services,
-      items_total_annotated,
-      items_total,
-      api_calls_other_sum,
-      api_calls_system_sum,
-      api_calls_sdk_sum,
-      ui_hours_sum,
-      ui_hours_roles_owner,
-      ui_hours_roles_engineer,
-      api_calls_sum,
-      annotations
-    ]
-  }
+#  set: detail {
+#    fields: [
+#      account_id,
+#      account_name,
+#      storage_total_persist,
+#      faas_usage_global_services,
+#      faas_usage_services,
+#      items_total_annotated,
+#      items_total,
+#      api_calls_other_sum,
+#      api_calls_system_sum,
+#      api_calls_sdk_sum,
+#      ui_hours_sum,
+#      ui_hours_roles_owner,
+#      ui_hours_roles_engineer,
+#      api_calls_sum,
+#      annotations
+#    ]
+#  }
 
 }
 
