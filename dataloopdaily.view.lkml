@@ -1,4 +1,4 @@
-view: dataloopMetricsDaily {
+view: dataloop_metrics_daily {
     label: "Dataloop Daily Metrics"
     sql_table_name: pendo_data.dataloopMetricsDaily ;;
 
