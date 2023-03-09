@@ -1,5 +1,5 @@
-view: dataloopdaily {
-    label: "Accounts"
+view: dataloopMetricsDaily {
+    label: "Dataloop Daily Metrics"
     sql_table_name: pendo_data.dataloopMetricsDaily ;;
 
     dimension: account_id {
