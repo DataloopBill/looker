@@ -53,7 +53,7 @@ view: dataloop_metrics_daily {
 
   dimension: string_to_num_api_calls_sum {
     type: number
-    sql: CAST(${TABLE}.api_calls_sum as INTEGER);;
+    sql: CAST(${TABLE}.apiCallsSum as INTEGER);;
   }
 
   dimension: ui_hours_sum {
