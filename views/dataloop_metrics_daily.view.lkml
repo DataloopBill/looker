@@ -185,7 +185,7 @@ view: dataloop_metrics_daily {
   dimension: date_as_timestamp {
     label: "Date to TimeStamp"
     type: string
-    sql: cast(PARSE_DATETIME('%Y-%m-%d %H:%M:%S',${TABLE}.date) as timestamp);;
+    sql: cast(PARSE_DATETIME('%Y-%m-%d %H:%M:%S.%L',${TABLE}.date) as timestamp);;
   }
 
   dimension_group: date {
