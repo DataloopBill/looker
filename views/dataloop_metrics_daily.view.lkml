@@ -185,7 +185,7 @@ view: dataloop_metrics_daily {
   dimension: yyyy_mm_dd {
     description: "Extracted Year-Month-Day"
     type: string
-    sql: substring(${TABLE}.date,1,10,);;
+    sql: substr(${TABLE}.date,1,10,);;
   }
 
   dimension: yyyy_mm_dd_as_timestamp {
