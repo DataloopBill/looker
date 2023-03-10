@@ -12,7 +12,7 @@ view: dataloop_metrics_daily {
   dimension: account_name {
     label: "Account Name"
     type: string
-    sql: ${TABLE}."accountName" ;;
+    sql: ${TABLE}.accountName ;;
   }
 
   dimension: project {
