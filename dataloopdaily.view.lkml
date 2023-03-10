@@ -136,7 +136,13 @@ view: dataloop_metrics_daily {
 
   measure: count {
     type: count
-    drill_fields: []
+    drill_fields: [detail*]
+  }
+
+  set: detail {
+    fields: [
+      total_api_calls_sum
+   ]
   }
 
   measure: total_api_calls_sum {
