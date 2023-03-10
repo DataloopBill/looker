@@ -28,12 +28,14 @@ view: dataloop_metrics_daily {
   }
 
   dimension: annotations {
-    label: "Annotations"
+    label: "Annotations String"
     type: string
+    hidden: yes
     sql: ${TABLE}.annotations ;;
   }
 
   dimension: string_to_num_annotations {
+    label: "Annotations"
     type: number
     sql: CAST(${TABLE}.annotations as INTEGER);;
   }
@@ -51,133 +53,157 @@ view: dataloop_metrics_daily {
   }
 
   dimension: api_calls_sum {
-    label: "Sum of API Calls"
+    label: "Sum of API Calls String"
     type: string
+    hidden: yes
     sql: ${TABLE}.apiCallsSum ;;
   }
 
   dimension: string_to_num_api_calls_sum {
+    label: "Sum of API Calls"
     type: number
     sql: CAST(${TABLE}.apiCallsSum as INTEGER);;
   }
 
   dimension: ui_hours_sum {
-    label: "Sum of UI Hours"
+    label: "Sum of UI Hours String"
     type: string
+    hidden: yes
     sql: ${TABLE}.uiHoursSum ;;
   }
 
   dimension: string_to_num_ui_hours_sum {
+    label: "Sum of UI Hours"
     type: number
     sql: CAST(${TABLE}.uiHoursSum as INTEGER);;
   }
 
   dimension: ui_hours_roles_engineer {
-    label: "UI Hours by Engineer Role"
+    label: "UI Hours by Engineer Role String"
     type: string
+    hidden: yes
     sql: ${TABLE}.uiHoursRolesEngineer ;;
   }
 
   dimension: string_to_num_ui_hours_roles_engineer {
+    label: "UI Hours by Engineer Role"
     type: number
     sql: CAST(${TABLE}.uiHoursRolesEngineer as INTEGER);;
   }
 
   dimension: ui_hours_roles_owner {
-    label: "UI Hours by Owner Role"
+    label: "UI Hours by Owner Role String"
     type: string
+    hidden: yes
     sql: ${TABLE}.uiHoursRolesOwner ;;
   }
 
   dimension: string_to_num_ui_hours_roles_owner {
+    label: "UI Hours by Owner Role"
     type: number
     sql: CAST(${TABLE}.uiHoursRolesOwner as INTEGER);;
   }
 
   dimension: api_calls_sdk_sum {
-    label: "Sum of SDK API Calls"
+    label: "Sum of SDK API Calls String"
     type: string
+    hidden: yes
     sql: ${TABLE}.apiCallsSdkSum ;;
   }
 
   dimension: string_to_num_api_calls_sdk_sum {
+    label: "Sum of SDK API Calls"
     type: number
     sql: CAST(${TABLE}.apiCallsSdkSum as INTEGER);;
   }
 
   dimension: api_calls_system_sum {
-    label: "Sum of System API Calls"
+    label: "Sum of System API Calls String"
     type: string
+    hidden: yes
     sql: ${TABLE}.apiCallsSystemSum ;;
   }
 
   dimension: string_to_num_api_calls_system_sum {
+    label: "Sum of System API Calls"
     type: number
     sql: CAST(${TABLE}.apiCallsSystemSum as INTEGER);;
   }
 
   dimension: api_calls_other_sum {
-    label: "Sum of Other API Calls"
+    label: "Sum of Other API Calls String"
     type: string
+    hidden: yes
     sql: ${TABLE}.apiCallsOtherSum ;;
   }
 
   dimension: string_to_num_api_calls_other_sum {
+    label: "Sum of Other API Calls"
     type: number
     sql: CAST(${TABLE}.apiCallsOtherSum as INTEGER);;
   }
 
   dimension: items_total {
-    label: "Total Items"
+    label: "Total Items String"
     type: string
+    hidden: yes
     sql: ${TABLE}.itemsTotal ;;
   }
 
   dimension: string_to_num_items_total {
+    label: "Total Items"
     type: number
     sql: CAST(${TABLE}.itemsTotal as INTEGER);;
   }
 
   dimension: items_total_annotated {
-    label: "Total Items Annotated"
+    label: "Total Items Annotated String"
     type: string
+    hidden: yes
     sql: ${TABLE}.itemsTotalAnnotated ;;
   }
 
   dimension: string_to_num_items_total_annotated {
+    label: "Total Items Annotated"
     type: number
     sql: CAST(${TABLE}.itemsTotalAnnotated as INTEGER);;
   }
 
   dimension: faas_usage_services {
-    label: "Services FaaS Usage"
+    label: "Services FaaS Usage String"
     type: string
+    hidden: yes
     sql: ${TABLE}.faasUsageServices ;;
   }
 
   dimension: string_to_num_faas_usage_services {
+    label: "Services FaaS Usage"
     type: number
     sql: CAST(${TABLE}.faasUsageServices as INTEGER);;
   }
 
   dimension: faas_usage_global_services {
-    label: "Global Services FaaS Usage"
+    label: "Global Services FaaS Usage String"
     type: string
+    hidden: yes
     sql: ${TABLE}.faasUsageGlobalServices ;;
   }
 
   dimension: string_to_num_faas_usage_global_services {
+    label: "Global Services FaaS Usage"
     type: number
     sql: CAST(${TABLE}.faasUsageGlobalServices as INTEGER);;
   }
 
   dimension: storage_total_persist {
-    label: "Total Persistent Storage"
+    label: "Total Persistent Storage String"
     type: string
+    hidden: yes
     sql: ${TABLE}.storageTotalPersist ;;
   }
 
   dimension: string_to_num_storage_total_persist {
+    label: "Total Persistent Storage"
     type: number
     sql: CAST(${TABLE}.storageTotalPersist as INTEGER);;
   }
@@ -185,12 +211,14 @@ view: dataloop_metrics_daily {
   dimension: yyyy_mm_dd {
     description: "Extracted Year-Month-Day"
     type: string
+    hidden: yes
     sql: substr(${TABLE}.date,1,10);;
   }
 
   dimension: yyyy_mm_dd_as_timestamp {
     label: "Date to TimeStamp"
     type: string
+    hidden: yes
     sql: cast(PARSE_DATETIME('%Y-%m-%d',${yyyy_mm_dd}) as timestamp);;
   }
 
@@ -217,27 +245,27 @@ view: dataloop_metrics_daily {
 
   measure: total_faas_usage_services {
     type: sum
-    sql: ${faas_usage_services} ;;
+    sql: ${string_to_num_faas_usage_services} ;;
   }
 
   measure: total_storage_total_persist {
     type: sum
-    sql: ${storage_total_persist} ;;
+    sql: ${string_to_num_storage_total_persist} ;;
   }
 
   measure: total_ui_hours_sum {
     type: sum
-    sql: ${ui_hours_sum} ;;
+    sql: ${string_to_num_ui_hours_sum} ;;
   }
 
   measure: total_annotations {
     type: sum
-    sql: ${annotations} ;;
+    sql: ${string_to_num_annotations} ;;
   }
 
   measure: total_items_annotated {
     type: sum
-    sql: ${items_total_annotated} ;;
+    sql: ${string_to_num_items_total_annotated} ;;
   }
 
   measure: count {
