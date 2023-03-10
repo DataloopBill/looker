@@ -182,13 +182,19 @@ view: dataloop_metrics_daily {
     sql: CAST(${TABLE}.storageTotalPersist as INTEGER);;
   }
 
-  dimension: date_as_timestamp {
-    label: "Date to TimeStamp"
+  dimension: yyyy_mm_dd {
+    description: "Extracted Year-Month-Day"
     type: string
-    sql: cast(PARSE_DATETIME('%Y-%m-%dT%H:%M:%S.%LZ',${TABLE}.date) as timestamp);;
+    sql: substring(${TABLE}.date,1,10,);;
   }
 
-  dimension_group: date {
+  dimension: yyyy_mm_dd_as_timestamp {
+    label: "Date to TimeStamp"
+    type: string
+    sql: cast(PARSE_DATETIME('%Y-%m-%d',${yyyy_mm_dd}) as timestamp);;
+  }
+
+  dimension_group: data_load_date {
     label: "Data Load Date"
     type: time
     timeframes: [
@@ -201,7 +207,7 @@ view: dataloop_metrics_daily {
       fiscal_year,
       day_of_week
     ]
-    sql: ${date_as_timestamp} ;;
+    sql: ${yyyy_mm_dd_as_timestamp} ;;
   }
 
   measure: total_api_calls_sum {
