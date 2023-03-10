@@ -48,7 +48,7 @@ view: dataloop_metrics_daily {
 
   dimension: api_calls_sum {
     label: "Sum of API Calls"
-    type: string
+    type: number
     sql: ${TABLE}."apiCallsSum" ;;
   }
 
@@ -134,22 +134,6 @@ view: dataloop_metrics_daily {
     sql: ${TABLE}."date" ;;
     }
 
-  dimension_group: dataloaddate {
-    label: "Data Load Date Grouping"
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      fiscal_quarter,
-      fiscal_year,
-      day_of_week
-    ]
-    sql: ${TABLE}."date" ;;
-  }
-
   measure: count {
     type: count
     drill_fields: []
@@ -160,29 +144,29 @@ view: dataloop_metrics_daily {
     sql: ${api_calls_sum} ;;
   }
 
-  measure: total_faas_usage_services {
-    type: sum
-    sql: ${faas_usage_services} ;;
-  }
-  measure: total_storage_total_persist {
-    type: sum
-    sql: ${storage_total_persist} ;;
-  }
+#  measure: total_faas_usage_services {
+#    type: sum
+#    sql: ${faas_usage_services} ;;
+#  }
+#  measure: total_storage_total_persist {
+#    type: sum
+#    sql: ${storage_total_persist} ;;
+#  }
 
-  measure: total_ui_hours_sum {
-    type: sum
-    sql: ${ui_hours_sum} ;;
-  }
+#  measure: total_ui_hours_sum {
+#    type: sum
+#    sql: ${ui_hours_sum} ;;
+#  }
 
-  measure: total_annotations {
-    type: sum
-    sql: ${annotations} ;;
-  }
+#  measure: total_annotations {
+#    type: sum
+#    sql: ${annotations} ;;
+#  }
 
-  measure: total_items_annotated {
-    type: sum
-    sql: ${items_total_annotated} ;;
-  }
+#  measure: total_items_annotated {
+#    type: sum
+#    sql: ${items_total_annotated} ;;
+#  }
 
 #  measure: count {
 #    label: "Account Count"
