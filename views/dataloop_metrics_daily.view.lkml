@@ -47,8 +47,13 @@ view: dataloop_metrics_daily {
 
   dimension: api_calls_sum {
     label: "Sum of API Calls"
-    type: number
+    type: string
     sql: ${TABLE}.apiCallsSum ;;
+  }
+
+  dimension: string_to_num_api_calls_sum {
+    type: number
+    sql: CAST(${TABLE}.api_calls_sum as INTEGER);;
   }
 
   dimension: ui_hours_sum {
@@ -137,7 +142,7 @@ view: dataloop_metrics_daily {
 
   measure: total_api_calls_sum {
     type: sum
-    sql: ${api_calls_sum} ;;
+    sql: ${string_to_num_api_calls_sum} ;;
   }
 
 }
