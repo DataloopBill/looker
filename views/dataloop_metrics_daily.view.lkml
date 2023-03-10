@@ -11,7 +11,6 @@ view: dataloop_metrics_daily {
 
   dimension: account_name {
     label: "Account Name"
-    primary_key: yes
     type: string
     sql: ${TABLE}."accountName" ;;
   }

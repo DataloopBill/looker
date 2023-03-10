@@ -31,7 +31,9 @@ explore: pendo_pages {}
 
 explore: pendo_feature_events {}
 
-explore: dataloop_metrics_daily {}
+explore: dataloop_metrics_daily {
+  label: "Dataloop Daily Metrics"
+}
 
 explore: pendo_accounts {
   label: "Pendo Accounts"
