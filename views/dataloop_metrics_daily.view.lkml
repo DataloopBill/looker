@@ -30,91 +30,91 @@ view: dataloop_metrics_daily {
   dimension: annotations {
     label: "Annotations"
     type: string
-    sql: ${TABLE}."annotations" ;;
+    sql: ${TABLE}.annotations ;;
   }
 
   dimension: org {
     label: "Organization ID"
     type: string
-    sql: ${TABLE}."org" ;;
+    sql: ${TABLE}.org ;;
   }
 
   dimension: org_name {
     label: "Organization Name"
     type: string
-    sql: ${TABLE}."orgName" ;;
+    sql: ${TABLE}.orgName ;;
   }
 
   dimension: api_calls_sum {
     label: "Sum of API Calls"
     type: number
-    sql: ${TABLE}."apiCallsSum" ;;
+    sql: ${TABLE}.apiCallsSum ;;
   }
 
   dimension: ui_hours_sum {
     label: "Sum of UI Hours"
     type: string
-    sql: ${TABLE}."uiHoursSum" ;;
+    sql: ${TABLE}.uiHoursSum ;;
   }
 
   dimension: ui_hours_roles_engineer {
     label: "UI Hours by Engineer Role"
     type: string
-    sql: ${TABLE}."uiHoursRolesEngineer" ;;
+    sql: ${TABLE}.uiHoursRolesEngineer ;;
   }
 
   dimension: ui_hours_roles_owner {
     label: "UI Hours by Owner Role"
     type: string
-    sql: ${TABLE}."uiHoursRolesOwner" ;;
+    sql: ${TABLE}.uiHoursRolesOwner ;;
   }
 
   dimension: api_calls_sdk_sum {
     label: "Sum of SDK API Calls"
     type: string
-    sql: ${TABLE}."apiCallsSdkSum" ;;
+    sql: ${TABLE}.apiCallsSdkSum ;;
   }
 
   dimension: api_calls_system_sum {
     label: "Sum of System API Calls"
     type: string
-    sql: ${TABLE}."apiCallsSystemSum" ;;
+    sql: ${TABLE}.apiCallsSystemSum ;;
   }
 
   dimension: api_calls_other_sum {
     label: "Sum of Other API Calls"
     type: string
-    sql: ${TABLE}."apiCallsOtherSum" ;;
+    sql: ${TABLE}.apiCallsOtherSum ;;
   }
 
   dimension: items_total {
     label: "Total Items"
     type: string
-    sql: ${TABLE}."itemsTotal" ;;
+    sql: ${TABLE}.itemsTotal ;;
   }
 
   dimension: items_total_annotated {
     label: "Total Items Annotated"
     type: string
-    sql: ${TABLE}."itemsTotalAnnotated" ;;
+    sql: ${TABLE}.itemsTotalAnnotated ;;
   }
 
   dimension: faas_usage_services {
     label: "Services FaaS Usage"
     type: string
-    sql: ${TABLE}."faasUsageServices" ;;
+    sql: ${TABLE}.faasUsageServices ;;
   }
 
   dimension: faas_usage_global_services {
     label: "Global Services FaaS Usage"
     type: string
-    sql: ${TABLE}."faasUsageGlobalServices" ;;
+    sql: ${TABLE}.faasUsageGlobalServices ;;
   }
 
   dimension: storage_total_persist {
     label: "Total Persistent Storage"
     type: string
-    sql: ${TABLE}."storageTotalPersist" ;;
+    sql: ${TABLE}.storageTotalPersist ;;
   }
 
   dimension_group: date {
@@ -130,7 +130,7 @@ view: dataloop_metrics_daily {
       fiscal_year,
       day_of_week
     ]
-    sql: ${TABLE}."date" ;;
+    sql: ${TABLE}.date ;;
   }
 
 
