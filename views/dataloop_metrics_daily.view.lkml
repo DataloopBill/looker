@@ -6,7 +6,7 @@ view: dataloop_metrics_daily {
     label: "Account ID"
     primary_key: yes
     type: string
-    sql: ${TABLE}."account" ;;
+    sql: ${TABLE}.account ;;
   }
 
   dimension: account_name {
@@ -18,13 +18,13 @@ view: dataloop_metrics_daily {
   dimension: project {
     label: "Project ID"
     type: string
-    sql: ${TABLE}."project" ;;
+    sql: ${TABLE}.project ;;
   }
 
   dimension: project_name {
     label: "Project Name"
     type: string
-    sql: ${TABLE}."projectName" ;;
+    sql: ${TABLE}.projectName ;;
   }
 
   dimension: annotations {
