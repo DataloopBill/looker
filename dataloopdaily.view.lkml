@@ -134,16 +134,7 @@ view: dataloop_metrics_daily {
     sql: ${TABLE}."date" ;;
     }
 
-  measure: count {
-    type: count
-    drill_fields: [detail*]
-  }
 
-  set: detail {
-    fields: [
-      total_api_calls_sum
-   ]
-  }
 
   measure: total_api_calls_sum {
     type: sum
