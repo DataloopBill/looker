@@ -243,9 +243,29 @@ view: dataloop_metrics_daily {
     sql: ${string_to_num_api_calls_sum} ;;
   }
 
+  measure: total_api_calls_other_sum {
+    type: sum
+    sql: ${string_to_num_api_calls_other_sum} ;;
+  }
+
+  measure: total_api_calls_system_sum {
+    type: sum
+    sql: ${string_to_num_api_calls_system_sum} ;;
+  }
+
+  measure: total_api_calls_sdk_sum {
+    type: sum
+    sql: ${string_to_num_api_calls_sdk_sum} ;;
+  }
+
   measure: total_faas_usage_services {
     type: sum
     sql: ${string_to_num_faas_usage_services} ;;
+  }
+
+  measure: total_faas_usage_global_services {
+    type: sum
+    sql: ${string_to_num_faas_usage_global_services} ;;
   }
 
   measure: total_storage_total_persist {
