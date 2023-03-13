@@ -40,7 +40,8 @@ explore: assoldcapacity {
 
   join: dataloop_metrics_daily {
     view_label: "Dataloop Daily Metrics"
-    relationship: many_to_one
+    type: left_outer
+    relationship: one_to_one
     sql_on: ${assoldcapacity.account_id}=${dataloop_metrics_daily.account_id} ;;
   }
 }
