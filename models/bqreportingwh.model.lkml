@@ -4,6 +4,9 @@ connection: "bqreportingwh"
 # include all the views
 include: "/views/**/*.view"
 
+# include all dashboards
+# include: "*.dashboard.lookml"
+
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
 
@@ -25,11 +28,22 @@ persist_with: bqreportingwh_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
+
 explore: pendo_features {}
 
 explore: pendo_pages {}
 
 explore: pendo_feature_events {}
+
+explore: assoldcapacity {
+  label: "As Sold Capacity"
+
+  join: dataloop_metrics_daily {
+    view_label: "Dataloop Daily Metrics"
+    relationship: many_to_one
+    sql_on: ${assoldcapacity.account_id}=${dataloop_metrics_daily.account_id} ;;
+  }
+}
 
 explore: dataloop_metrics_daily {
   label: "Dataloop Daily Metrics"
