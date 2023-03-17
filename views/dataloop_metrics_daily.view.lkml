@@ -68,15 +68,14 @@ view: dataloop_metrics_daily {
   dimension: ui_hours_sum {
     label: "Sum of UI Hours String"
     type: string
-    hidden: yes
-    sql: ${TABLE}.uiHoursSum ;;
+    sql:  CAST(${TABLE}.uiHoursSum as NUMBER);;
   }
 
-  dimension: string_to_num_ui_hours_sum {
-    label: "Sum of UI Hours"
-    type: number
-    sql: CAST(${TABLE}.uiHoursSum as INTEGER);;
-  }
+#  dimension: string_to_num_ui_hours_sum {
+#    label: "Sum of UI Hours"
+#    type: number
+#    sql: CAST(${TABLE}.uiHoursSum as INTEGER);;
+#  }
 
   dimension: ui_hours_roles_engineer {
     label: "UI Hours by Engineer Role String"
@@ -275,7 +274,7 @@ view: dataloop_metrics_daily {
 
   measure: total_ui_hours_sum {
     type: sum
-    sql: ${string_to_num_ui_hours_sum} ;;
+    sql: ${ui_hours_sum} ;;
   }
 
   measure: total_annotations {
@@ -305,7 +304,7 @@ view: dataloop_metrics_daily {
       string_to_num_api_calls_other_sum,
       string_to_num_api_calls_system_sum,
       string_to_num_api_calls_sdk_sum,
-      string_to_num_ui_hours_sum,
+      ui_hours_sum,
       string_to_num_ui_hours_roles_owner,
       string_to_num_ui_hours_roles_engineer,
       string_to_num_api_calls_sum,
