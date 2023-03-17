@@ -75,7 +75,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_ui_hours_sum {
     label: "Sum of UI Hours"
     type: number
-    sql: CAST(${TABLE}.uiHoursSum as NUMBER);;
+    sql: CAST(${TABLE}.uiHoursSum as INTEGER);;
   }
 
   dimension: ui_hours_roles_engineer {
