@@ -67,8 +67,9 @@ view: dataloop_metrics_daily {
 
   dimension: ui_hours_sum {
     label: "Sum of UI Hours String"
-    type: string
-    sql:  CAST(${TABLE}.uiHoursSum as NUMBER);;
+    type: number
+    sql:  ${TABLE}.uiHoursSum ;;
+      value_format: "#.00;(#.00)"
   }
 
 #  dimension: string_to_num_ui_hours_sum {
@@ -275,6 +276,7 @@ view: dataloop_metrics_daily {
   measure: total_ui_hours_sum {
     type: sum
     sql: ${ui_hours_sum} ;;
+      value_format: "#.00;(#.00)"
   }
 
   measure: total_annotations {
