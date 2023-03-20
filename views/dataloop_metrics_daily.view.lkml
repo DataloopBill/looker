@@ -306,7 +306,7 @@ view: dataloop_metrics_daily {
       string_to_num_api_calls_other_sum,
       string_to_num_api_calls_system_sum,
       string_to_num_api_calls_sdk_sum,
-#      string_to_num_ui_hours_sum,
+      string_to_num_ui_hours_sum,
       string_to_num_ui_hours_roles_owner,
       string_to_num_ui_hours_roles_engineer,
       string_to_num_api_calls_sum,
