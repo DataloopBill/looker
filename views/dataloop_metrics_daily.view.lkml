@@ -258,19 +258,19 @@ view: dataloop_metrics_daily {
   }
 
   measure: total_api_calls_other_sum {
-    label: "Total API Calls - Other"
+    label: "API Calls - Other"
     type: sum
     sql: ${string_to_num_api_calls_other_sum} ;;
   }
 
   measure: total_api_calls_system_sum {
-    label: "Total API Calls - System"
+    label: "API Calls - System"
     type: sum
     sql: ${string_to_num_api_calls_system_sum} ;;
   }
 
   measure: total_api_calls_sdk_sum {
-    label: "Total API Calls - SDK"
+    label: "API Calls - SDK"
     type: sum
     sql: ${string_to_num_api_calls_sdk_sum} ;;
   }
@@ -300,13 +300,13 @@ view: dataloop_metrics_daily {
   }
 
   measure: total_ui_hours_role_engineer {
-    label: "Total UI Hours - Engineer Role"
+    label: "UI Hours - Engineer Role"
     type: sum
     sql: ${string_to_num_ui_hours_roles_engineer} ;;
   }
 
   measure: total_ui_hours_role_owner {
-    label: "Total UI Hours - Owner Role"
+    label: "UI Hours - Owner Role"
     type: sum
     sql: ${string_to_num_ui_hours_roles_owner} ;;
   }
