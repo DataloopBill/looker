@@ -37,6 +37,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_annotations {
     label: "Annotations"
     type: number
+    hidden: yes
     sql: CAST(${TABLE}.annotations as INTEGER);;
   }
 
@@ -62,19 +63,21 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_api_calls_sum {
     label: "Sum of API Calls"
     type: number
+    hidden: yes
     sql: CAST(${TABLE}.apiCallsSum as INTEGER);;
   }
 
   dimension: ui_hours_sum {
     label: "Sum of UI Hours String"
     type: number
-    sql:  ${TABLE}.uiHoursSum ;;
     hidden: yes
+    sql:  ${TABLE}.uiHoursSum ;;
   }
 
   dimension: string_to_num_ui_hours_sum {
     label: "Sum of UI Hours"
     type: number
+    hidden: yes
     sql: CAST(ROUND(CAST(${TABLE}.uiHoursSum AS FLOAT64)) AS INT64  ) ;;
   }
 
@@ -88,6 +91,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_ui_hours_roles_engineer {
     label: "UI Hours by Engineer Role"
     type: number
+    hidden: yes
     sql: CAST(ROUND(CAST(${TABLE}.uiHoursRolesEngineer AS FLOAT64)) AS INT64  ) ;;
   }
 
@@ -101,6 +105,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_ui_hours_roles_owner {
     label: "UI Hours by Owner Role"
     type: number
+    hidden: yes
     sql: CAST(ROUND(CAST(${TABLE}.uiHoursRolesOwner AS FLOAT64)) AS INT64  ) ;;
   }
 
@@ -114,6 +119,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_api_calls_sdk_sum {
     label: "Sum of SDK API Calls"
     type: number
+    hidden: yes
     sql: CAST(${TABLE}.apiCallsSdkSum as INTEGER);;
   }
 
@@ -127,6 +133,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_api_calls_system_sum {
     label: "Sum of System API Calls"
     type: number
+    hidden: yes
     sql: CAST(${TABLE}.apiCallsSystemSum as INTEGER);;
   }
 
@@ -140,6 +147,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_api_calls_other_sum {
     label: "Sum of Other API Calls"
     type: number
+    hidden: yes
     sql: CAST(${TABLE}.apiCallsOtherSum as INTEGER);;
   }
 
@@ -153,6 +161,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_items_total {
     label: "Total Items"
     type: number
+    hidden: yes
     sql: CAST(${TABLE}.itemsTotal as INTEGER);;
   }
 
@@ -166,6 +175,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_items_total_annotated {
     label: "Total Items Annotated"
     type: number
+    hidden: yes
     sql: CAST(${TABLE}.itemsTotalAnnotated as INTEGER);;
   }
 
@@ -179,6 +189,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_faas_usage_services {
     label: "Services FaaS Usage"
     type: number
+    hidden: yes
     sql: CAST(${TABLE}.faasUsageServices as INTEGER);;
   }
 
@@ -192,6 +203,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_faas_usage_global_services {
     label: "Global Services FaaS Usage"
     type: number
+    hidden: yes
     sql: CAST(${TABLE}.faasUsageGlobalServices as INTEGER);;
   }
 
@@ -205,6 +217,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_storage_total_persist {
     label: "Total Persistent Storage"
     type: number
+    hidden: yes
     sql: CAST(${TABLE}.storageTotalPersist as INTEGER);;
   }
 
@@ -239,6 +252,7 @@ view: dataloop_metrics_daily {
   }
 
   measure: total_api_calls_sum {
+    label: "Total API Calls"
     type: sum
     sql: ${string_to_num_api_calls_sum} ;;
   }
@@ -276,6 +290,16 @@ view: dataloop_metrics_daily {
   measure: total_ui_hours_sum {
     type: sum
     sql: ${string_to_num_ui_hours_sum} ;;
+  }
+
+  measure: total_ui_hours_role_engineer {
+    type: sum
+    sql: ${string_to_num_ui_hours_roles_engineer} ;;
+  }
+
+  measure: total_ui_hours_role_owner {
+    type: sum
+    sql: ${string_to_num_ui_hours_roles_owner} ;;
   }
 
   measure: total_annotations {

@@ -51,7 +51,7 @@ view: assoldcapacity {
   dimension: string_to_num_ui_hours {
     label: "UI Hours Sold"
     type: number
-    sql: CAST(${TABLE}.ui_hours as INTEGER);;
+    sql: CAST(${TABLE}.uiHours as INTEGER);;
   }
 
   dimension: compute {
