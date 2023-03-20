@@ -173,7 +173,7 @@ view: dataloop_metrics_daily {
   }
 
   dimension: string_to_num_items_total_annotated {
-    label: "Total Items Annotated"
+    label: "Total Annotated"
     type: number
     hidden: yes
     sql: CAST(${TABLE}.itemsTotalAnnotated as INTEGER);;
@@ -215,7 +215,7 @@ view: dataloop_metrics_daily {
   }
 
   dimension: string_to_num_storage_total_persist {
-    label: "Total Persistent Storage"
+    label: "Total Storage"
     type: number
     hidden: yes
     sql: CAST(${TABLE}.storageTotalPersist as INTEGER);;
@@ -258,56 +258,67 @@ view: dataloop_metrics_daily {
   }
 
   measure: total_api_calls_other_sum {
+    label: "Total API Calls - Other"
     type: sum
     sql: ${string_to_num_api_calls_other_sum} ;;
   }
 
   measure: total_api_calls_system_sum {
+    label: "Total API Calls - System"
     type: sum
     sql: ${string_to_num_api_calls_system_sum} ;;
   }
 
   measure: total_api_calls_sdk_sum {
+    label: "Total API Calls - SDK"
     type: sum
     sql: ${string_to_num_api_calls_sdk_sum} ;;
   }
 
   measure: total_faas_usage_services {
+    label: "Total FaaS Usage - Services"
     type: sum
     sql: ${string_to_num_faas_usage_services} ;;
   }
 
   measure: total_faas_usage_global_services {
+    label: "Total FaaS Usage - Global Services"
     type: sum
     sql: ${string_to_num_faas_usage_global_services} ;;
   }
 
   measure: total_storage_total_persist {
+    label: "Total Persistent Storage"
     type: sum
     sql: ${string_to_num_storage_total_persist} ;;
   }
 
   measure: total_ui_hours_sum {
+    label: "Total UI Hours"
     type: sum
     sql: ${string_to_num_ui_hours_sum} ;;
   }
 
   measure: total_ui_hours_role_engineer {
+    label: "Total UI Hours - Engineer Role"
     type: sum
     sql: ${string_to_num_ui_hours_roles_engineer} ;;
   }
 
   measure: total_ui_hours_role_owner {
+    label: "Total UI Hours - Owner Role"
     type: sum
     sql: ${string_to_num_ui_hours_roles_owner} ;;
   }
 
   measure: total_annotations {
+    label: "Total Annotations"
     type: sum
     sql: ${string_to_num_annotations} ;;
   }
 
   measure: total_items_annotated {
+    label: "Total Items Annotated"
     type: sum
     sql: ${string_to_num_items_total_annotated} ;;
   }
