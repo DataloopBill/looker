@@ -76,7 +76,6 @@ view: dataloop_metrics_daily {
     label: "Sum of UI Hours"
     type: number
     sql: CAST(ROUND(CAST(${TABLE}.uiHoursSum AS FLOAT64)) AS INT64  ) ;;
-#    sql: CAST(${TABLE}.uiHoursSum as INTEGER);;
   }
 
   dimension: ui_hours_roles_engineer {
@@ -89,7 +88,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_ui_hours_roles_engineer {
     label: "UI Hours by Engineer Role"
     type: number
-    sql: CAST(${TABLE}.uiHoursRolesEngineer as INTEGER);;
+    sql: CAST(ROUND(CAST(${TABLE}.uiHoursRolesEngineer AS FLOAT64)) AS INT64  ) ;;
   }
 
   dimension: ui_hours_roles_owner {
@@ -102,7 +101,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_ui_hours_roles_owner {
     label: "UI Hours by Owner Role"
     type: number
-    sql: CAST(${TABLE}.uiHoursRolesOwner as INTEGER);;
+    sql: CAST(ROUND(CAST(${TABLE}.uiHoursRolesOwner AS FLOAT64)) AS INT64  ) ;;
   }
 
   dimension: api_calls_sdk_sum {
