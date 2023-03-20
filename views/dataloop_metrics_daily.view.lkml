@@ -274,10 +274,10 @@ view: dataloop_metrics_daily {
     sql: ${string_to_num_storage_total_persist} ;;
   }
 
-#  measure: total_ui_hours_sum {
-#    type: sum
-#    sql: ${string_to_num_ui_hours_sum} ;;
-#  }
+  measure: total_ui_hours_sum {
+    type: sum
+    sql: ${string_to_num_ui_hours_sum} ;;
+  }
 
   measure: total_annotations {
     type: sum
