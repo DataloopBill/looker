@@ -23,9 +23,9 @@ view: assoldcapacity {
   }
 
   dimension: string_to_num_api_calls {
-#    label: "API Calls"
+    label: "API Calls Sold"
     type: number
-    hidden: yes
+#    hidden: yes
     sql: CAST(${TABLE}.apiCalls as INTEGER);;
   }
 
@@ -37,9 +37,9 @@ view: assoldcapacity {
   }
 
   dimension: string_to_num_datapoints {
-#    label: "Datapoints Sold"
+    label: "Datapoints Sold"
     type: number
-    hidden: yes
+#    hidden: yes
     sql: CAST(${TABLE}.datapoints as INTEGER);;
   }
 
@@ -51,9 +51,9 @@ view: assoldcapacity {
   }
 
   dimension: string_to_num_ui_hours {
-#    label: "UI Hours Sold"
+    label: "UI Hours Sold"
     type: number
-    hidden: yes
+#    hidden: yes
     sql: CAST(${TABLE}.uiHours as INTEGER);;
   }
 
@@ -65,10 +65,9 @@ view: assoldcapacity {
   }
 
   dimension: string_to_num_compute {
-#    label: "Compute Sold"
+    label: "Compute Sold"
     type: number
-    hidden: yes
-
+#    hidden: yes
     sql: CAST(${TABLE}.compute as INTEGER);;
   }
 
@@ -80,40 +79,40 @@ view: assoldcapacity {
   }
 
   dimension: string_to_num_storage {
-#    label: "Storage Sold"
+    label: "Storage Sold"
     type: number
-    hidden: yes
+#    hidden: yes
     sql: CAST(${TABLE}.storage as INTEGER);;
   }
 
-  measure: total_api_calls_sold {
-    label: "API Calls Sold"
-    type: sum
-    sql: ${string_to_num_api_calls} ;;
-  }
+#  measure: total_api_calls_sold {
+#    label: "API Calls Sold"
+#    type: sum
+#    sql: ${string_to_num_api_calls} ;;
+#  }
 
-  measure: total_datapoints_sold {
-    label: "Datapoints Sold"
-    type: sum
-    sql: ${string_to_num_datapoints} ;;
-  }
+#  measure: total_datapoints_sold {
+#    label: "Datapoints Sold"
+#    type: sum
+#    sql: ${string_to_num_datapoints} ;;
+#  }
 
-  measure: total_ui_hours {
-    label: "UI Hours Sold"
-    type: sum
-    sql: ${string_to_num_ui_hours} ;;
-  }
+#  measure: total_ui_hours {
+#    label: "UI Hours Sold"
+#    type: sum
+#    sql: ${string_to_num_ui_hours} ;;
+#  }
 
-  measure: total_compute {
-    label: "Compute Sold"
-    type: sum
-    sql: ${string_to_num_compute} ;;
-  }
+#  measure: total_compute {
+#    label: "Compute Sold"
+#    type: sum
+#    sql: ${string_to_num_compute} ;;
+#  }
 
-  measure: total_storage {
-    label: "Storage Sold"
-    type: sum
-    sql: ${string_to_num_storage} ;;
-  }
+#  measure: total_storage {
+#    label: "Storage Sold"
+#    type: sum
+#    sql: ${string_to_num_storage} ;;
+#  }
 
 }
