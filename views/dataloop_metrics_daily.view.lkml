@@ -69,14 +69,15 @@ view: dataloop_metrics_daily {
     label: "Sum of UI Hours String"
     type: number
     sql:  ${TABLE}.uiHoursSum ;;
-#    hidden: yes
+    hidden: yes
   }
 
-#  dimension: string_to_num_ui_hours_sum {
-#    label: "Sum of UI Hours"
-#    type: number
+  dimension: string_to_num_ui_hours_sum {
+    label: "Sum of UI Hours"
+    type: number
+    sql: CAST(ROUND(CAST(${TABLE}.uiHoursSum AS FLOAT64)) AS INT64  ) ;;
 #    sql: CAST(${TABLE}.uiHoursSum as INTEGER);;
-#  }
+  }
 
   dimension: ui_hours_roles_engineer {
     label: "UI Hours by Engineer Role String"
