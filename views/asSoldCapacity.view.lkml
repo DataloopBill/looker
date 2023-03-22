@@ -51,9 +51,9 @@ view: assoldcapacity {
   }
 
   dimension: string_to_num_ui_hours {
-    label: "UI Hours Sold"
+#    label: "UI Hours Sold"
     type: number
-#    hidden: yes
+    hidden: yes
     sql: CAST(${TABLE}.uiHours as INTEGER);;
   }
 
@@ -97,11 +97,11 @@ view: assoldcapacity {
 #    sql: ${string_to_num_datapoints} ;;
 #  }
 
-#  measure: total_ui_hours {
-#    label: "UI Hours Sold"
-#    type: sum
-#    sql: ${string_to_num_ui_hours} ;;
-#  }
+  measure: total_ui_hours {
+    label: "UI Hours Sold"
+    type: average
+    sql: ${string_to_num_ui_hours} ;;
+  }
 
 #  measure: total_compute {
 #    label: "Compute Sold"

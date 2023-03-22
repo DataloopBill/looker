@@ -29,11 +29,11 @@ persist_with: bqreportingwh_default_datagroup
 # Each joined view also needs to define a primary key.
 
 
-explore: pendo_features {}
+# explore: pendo_features {}
 
-explore: pendo_pages {}
+# explore: pendo_pages {}
 
-explore: pendo_feature_events {}
+# explore: pendo_feature_events {}
 
 explore: assoldcapacity {
   label: "As Sold Capacity"
@@ -54,6 +54,6 @@ explore: pendo_accounts {
   label: "Pendo Accounts"
 }
 
-explore: pendo_page_events {}
+# explore: pendo_page_events {}
 
-explore: pendo_visitors {}
+# explore: pendo_visitors {}
