@@ -29,27 +29,50 @@ persist_with: bqreportingwh_default_datagroup
 # Each joined view also needs to define a primary key.
 
 explore: events {
-  label: "Events"
+  label: "Pendo Events"
 
-#  join: pendo_activeuser_view {
-#    view_label: "Pendo Active User View"
-#    relationship: many_to_one
-#    sql_on: ${events.accountid}=${pendo_activeuser_view.accountid} and ${events.visitorid}=${pendo_activeuser_view.visitorid}  ;;
-#  }
+  join: pendo_activeuser_view {
+    view_label: "Pendo Active User View"
+    relationship: many_to_one
+    sql_on: ${events.accountid}=${pendo_activeuser_view.accountid} and ${events.visitorid}=${pendo_activeuser_view.visitorid}  ;;
+  }
 
-#  join: pendo_activeaccount_view {
-#    view_label: "Pendo Active Account View"
-#    relationship: many_to_one
-#    sql_on: ${events.accountid}=${pendo_activeaccount_view.accountid} ;;
-#  }
+  join: pendo_activeaccount_view {
+    view_label: "Pendo Active Account View"
+    relationship: many_to_one
+    sql_on: ${events.accountid}=${pendo_activeaccount_view.accountid} ;;
+  }
 
 }
 
-explore: pendo_features {}
+explore: pendo_features {
+  label: "Pendo Features"
+}
 
-explore: pendo_pages {}
+explore: pendo_pages {
+  label: "Pendo Pages"
+}
 
-explore: pendo_feature_events {}
+explore: pendo_feature_events {
+  label: "Pendo Feature Events"
+  join: pendo_accounts {
+    type: left_outer
+    sql_on: ${pendo_feature_events.account_id} = ${pendo_accounts.account_id} ;;
+    relationship: many_to_one
+    }
+
+    join: pendo_visitors {
+      type: left_outer
+      sql_on: ${pendo_feature_events.visitor_id} = ${pendo_visitors.visitor_id} ;;
+      relationship: many_to_one
+    }
+
+    join: pendo_features {
+      type: left_outer
+      sql_on: ${pendo_feature_events.feature_id} = ${pendo_features.id} ;;
+      relationship: many_to_one
+    }
+}
 
 explore: assoldcapacity {
   label: "As Sold Capacity"
@@ -70,6 +93,32 @@ explore: pendo_accounts {
   label: "Pendo Accounts"
 }
 
-explore: pendo_page_events {}
+explore: pendo_page_events {
+  label: "Pendo Page Events"
+  join: pendo_accounts {
+    type: left_outer
+    sql_on: ${pendo_page_events.account_id} = ${pendo_accounts.account_id} ;;
+    relationship: many_to_one
+  }
 
-explore: pendo_visitors {}
+  join: pendo_visitors {
+    type: left_outer
+    sql_on: ${pendo_page_events.visitor_id} = ${pendo_visitors.visitor_id} ;;
+    relationship: many_to_one
+  }
+
+  join: pendo_pages {
+    type: left_outer
+    sql_on: ${pendo_page_events.page_id} = ${pendo_pages.id} ;;
+    relationship: many_to_one
+  }
+}
+
+explore: pendo_visitors {
+  label: "Pendo Visitors"
+  join: pendo_accounts {
+    type: left_outer
+    sql_on: ${pendo_visitors.account_id} = ${pendo_accounts.account_id} ;;
+    relationship: one_to_many
+  }
+}
