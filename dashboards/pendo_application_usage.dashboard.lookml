@@ -1,8 +1,8 @@
 - dashboard: pendo_application_usage
   title: Pendo Application Usage
   layout: newspaper
-  preferred_viewer: dashboards-next
-  preferred_slug: ltUO8h9XUg03t45HGpwOUN
+#  preferred_viewer: dashboards-next
+#  preferred_slug: ltUO8h9XUg03t45HGpwOUN
   elements:
   - title: Most Active Account by Page Visits
     name: Most Active Account by Page Visits
