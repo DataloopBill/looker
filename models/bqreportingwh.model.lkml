@@ -28,12 +28,28 @@ persist_with: bqreportingwh_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
+explore: events {
+  label: "Events"
 
-# explore: pendo_features {}
+#  join: pendo_activeuser_view {
+#    view_label: "Pendo Active User View"
+#    relationship: many_to_one
+#    sql_on: ${events.accountid}=${pendo_activeuser_view.accountid} and ${events.visitorid}=${pendo_activeuser_view.visitorid}  ;;
+#  }
 
-# explore: pendo_pages {}
+#  join: pendo_activeaccount_view {
+#    view_label: "Pendo Active Account View"
+#    relationship: many_to_one
+#    sql_on: ${events.accountid}=${pendo_activeaccount_view.accountid} ;;
+#  }
 
-# explore: pendo_feature_events {}
+}
+
+explore: pendo_features {}
+
+explore: pendo_pages {}
+
+explore: pendo_feature_events {}
 
 explore: assoldcapacity {
   label: "As Sold Capacity"
@@ -54,6 +70,6 @@ explore: pendo_accounts {
   label: "Pendo Accounts"
 }
 
-# explore: pendo_page_events {}
+explore: pendo_page_events {}
 
-# explore: pendo_visitors {}
+explore: pendo_visitors {}
