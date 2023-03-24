@@ -1,29 +1,23 @@
-view: pendo_activeuser_view {
+view: pendo_activeaccount_view {
   derived_table: {
     sql:
                   SELECT    accountId,
-                            visitorId,
                             MONTH(day) as mth,
                             count(1) as logins
                   from      pendo_data.pendoEvents a
-                  group by  1,2,3
+                  group by  1,2
  ;;
   }
 
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${TABLE}.accountId,${TABLE}.visitorId) ;;
+    sql: ${TABLE}.accountId ;;
   }
 
   dimension: accountid {
     label: "Account ID"
     sql: ${TABLE}.accountId ;;
-  }
-
-  dimension: visitorid {
-    label: "Visitor ID"
-    sql: ${TABLE}.visitorId ;;
   }
 
   dimension_group: mth {
@@ -52,9 +46,10 @@ view: pendo_activeuser_view {
 
   }
 
-  measure: user_cnt {
-    label: "User Count"
+  measure: account_cnt {
+    label: "Account Count"
     type: count
+
   }
 
 }
