@@ -1,5 +1,5 @@
 - dashboard: pendo_application_usage
-  title: Pendo Application Usage
+  title: Dataloop Usage - Pendo as Data Source
   layout: newspaper
 #  preferred_viewer: dashboards-next
 #  preferred_slug: ltUO8h9XUg03t45HGpwOUN
@@ -71,7 +71,7 @@
     show_view_names: false
     point_style: none
     series_colors:
-      pendo_page_events.count: "#d0d0d0"
+      pendo_page_events.count: "#497ec4"
     series_types: {}
     limit_displayed_rows: false
     y_axis_combined: true
@@ -105,7 +105,7 @@
     - pendo_pages.name
     - pendo_page_events.count
     filters:
-      pendo_pages.name: "-Dashboard Home"
+      pendo_pages.name: "-Null -Dashboard Home"
     sorts:
     - pendo_page_events.count desc
     limit: 10
@@ -119,7 +119,7 @@
     show_view_names: false
     point_style: none
     series_colors:
-      pendo_page_events.count: "#d0d0d0"
+      pendo_page_events.count: "#497ec4"
     series_labels:
       pendo_page_events.count: Page Event Count - Excludes Dashboard Home Page
     series_types: {}
@@ -167,7 +167,7 @@
     show_view_names: false
     point_style: none
     series_colors:
-      pendo_feature_events.count: "#b9b9b9"
+      pendo_feature_events.count: "#497ec4"
     series_types: {}
     limit_displayed_rows: false
     y_axis_combined: true
@@ -213,7 +213,7 @@
     show_view_names: false
     point_style: none
     series_colors:
-      pendo_feature_events.count: "#b9b9b9"
+      pendo_feature_events.count: "#497ec4"
     series_types: {}
     limit_displayed_rows: false
     y_axis_combined: true
