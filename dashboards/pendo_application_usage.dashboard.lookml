@@ -25,7 +25,7 @@
     show_view_names: false
     point_style: none
     series_colors:
-      pendo_page_events.count: "#d0d0d0"
+      pendo_page_events.count: "#497ec4"
     series_types: {}
     limit_displayed_rows: false
     y_axis_combined: true
