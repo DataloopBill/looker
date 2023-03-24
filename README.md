@@ -1,4 +1,24 @@
-<h1><span style="color:#2d7eea">README - Your LookML Project</span></h1>
+<h1><span style="color:#2d7eea">Dataloop's LookML Project</span></h1>
+
+Some quick notes about our project:
+
+Data Sources
+- All data for this project is stored in BigQuery under GCP project `combined-data-analytics`
+- Until we get Salesforce feeding us As Sold Capacity at the Organization level, we have an interim Google Sheet where this is captured then fed into BigQuery - https://docs.google.com/spreadsheets/d/1SjEVstGYCQk13LXkQfmKVFjEFiV-Vd6uYUIonovo_Xw/edit#gid=0
+- Ignore that the data connection points to `pendo_data` in BigQuery.  This was a poor naming choice on Bill's part.  He started with Pendo data and quickly moved to include other data sources.  At some point he might make it a generic title.  For now, just know this is the data source in BigQuery that contains all the data referred to in this project.
+- Pendo data is being fed to BigQuery via API
+- Dataloop date is being fed to BigQuery via API
+
+ETL
+- We use Integrate.io's Xplenty tool for executing API calls to Pendo and Dataloop to extract data from these platforms, transform it then load it into BigQuery
+- There is a nightly set of ETL jobs that run to pull the prior days' data and load it - meaning all data is from the previous day and earlier
+- Email alerts go to etl-job-alerts@dataloop.ai for job and cluster failures
+
+Nuances
+- In Pendo, we are capturing Dataloop `org` which is the Dataloop organization GUID under `account_id`
+
+
+Below are the provided explanations from Looker about what LookML projects and files do
 
 <h2><span style="color:#2d7eea">LookML Overview</span></h2>
 
