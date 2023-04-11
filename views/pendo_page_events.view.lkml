@@ -77,4 +77,16 @@ view: pendo_page_events {
     type: count
     drill_fields: []
   }
+
+  measure: total_events_sum {
+    label: "Sum of Events"
+    type: sum
+    sql: ${num_events} ;;
+  }
+
+  measure: total_minutes_sum {
+    label: "Sum of Minutes"
+    type: sum
+    sql: ${num_minutes} ;;
+  }
 }
