@@ -23,7 +23,8 @@ view: salesforceaccount {
 
   dimension: contracted_value {
     label: "Contracted Value"
-    type: string
+    type: number
+    value_format: "$#.00;($#.00)"
     sql: ${TABLE}.Contracted_Value__c ;;
   }
 
