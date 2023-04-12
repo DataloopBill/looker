@@ -9,6 +9,13 @@ view: salesforceusers {
     sql: ${TABLE}.Id ;;
   }
 
+  dimension: user_account_id {
+    label: "Account ID"
+    type: string
+    hidden: yes
+    sql: ${TABLE}.AccountId ;;
+  }
+
   dimension: user_name {
     label: "User Name"
     type: string

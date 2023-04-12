@@ -9,6 +9,13 @@ view: salesforcecontacts {
     sql: ${TABLE}.Id ;;
   }
 
+  dimension: contact_account_id {
+    label: "Account ID"
+    type: string
+    hidden: yes
+    sql: ${TABLE}.AccountId ;;
+  }
+
   dimension: contact_name {
     label: "Contact Name"
     type: string
