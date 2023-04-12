@@ -57,6 +57,10 @@ explore: salesforceusers {
   label: "Salesforce Users"
 }
 
+explore: salesforcecontacts {
+  label: "Salesforce Contacts"
+}
+
 explore: pendo_features {
   label: "Pendo Features"
 }
