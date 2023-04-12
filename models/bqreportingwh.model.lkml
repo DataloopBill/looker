@@ -45,6 +45,10 @@ explore: events {
 
 }
 
+explore: salesforceaccount {
+  label: "Salesforce Accounts"
+}
+
 explore: pendo_features {
   label: "Pendo Features"
 }
