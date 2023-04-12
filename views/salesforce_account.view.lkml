@@ -1,5 +1,5 @@
 view: salesforceaccount {
-  label: "As Sold Capacity"
+  label: "Salesforce Account Data"
   sql_table_name: pendo_data.salesforceAccount ;;
 
   dimension: account_id {
