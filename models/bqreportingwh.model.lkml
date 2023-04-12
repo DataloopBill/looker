@@ -48,12 +48,12 @@ explore: events {
 explore: salesforceaccount {
   label: "Salesforce Accounts"
 
-#  join: salesforceusers {
-#    view_label: "Salesforce Users"
-#    type: left_outer
-#    relationship: many_to_one
-#    sql_on: ${salesforceaccount.account_id}=${salesforceusers.user_account_id} ;;
-#  }
+  join: salesforceusers {
+    view_label: "Salesforce Users"
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${salesforceaccount.account_id}=${salesforceusers.user_account_id} ;;
+  }
 
   join: salesforcecontacts {
     view_label: "Salesforce Contacts"
