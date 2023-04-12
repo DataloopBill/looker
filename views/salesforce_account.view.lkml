@@ -28,12 +28,12 @@ view: salesforceaccount {
     sql: ${TABLE}.Contracted_Value__c ;;
   }
 
-  dimension: parsed_effective_churn_date {
-    label: "Parsed Effective Churn Date"
-    type: string
-    hidden: yes
-    sql: PARSE_DATETIME('%Y-%m-%d',${TABLE}.Effective_Churn_Date__c) ;;
-  }
+#  dimension: parsed_effective_churn_date {
+#    label: "Parsed Effective Churn Date"
+#    type: string
+#    hidden: yes
+#    sql: ${TABLE}.Effective_Churn_Date__c ;;
+#  }
 
   dimension_group: effective_churn_date {
     label: "Effective Churn Date"
@@ -48,7 +48,7 @@ view: salesforceaccount {
       fiscal_year,
       day_of_week
   ]
-    sql: ${parsed_effective_churn_date} ;;
+    sql: ${TABLE}.Effective_Churn_Date__c ;;
   }
 
   dimension: labeling_svc_hours {
