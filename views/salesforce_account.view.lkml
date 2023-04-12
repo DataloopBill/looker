@@ -86,6 +86,12 @@ view: salesforceaccount {
     sql: ${TABLE}.OwnerId ;;
   }
 
+  dimension: cs_owner {
+    label: "CS Owner"
+    type: string
+    sql: ${TABLE}.CS_Owner__c ;;
+  }
+
   dimension: parent_id {
     label: "Parent ID"
     type: string
