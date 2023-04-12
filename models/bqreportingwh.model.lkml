@@ -49,6 +49,14 @@ explore: salesforceaccount {
   label: "Salesforce Accounts"
 }
 
+explore: salesforceopportunity {
+  label: "Salesforce Opportunities"
+}
+
+explore: salesforceusers {
+  label: "Salesforce Users"
+}
+
 explore: pendo_features {
   label: "Pendo Features"
 }
