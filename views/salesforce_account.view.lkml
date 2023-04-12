@@ -138,6 +138,7 @@ view: salesforceaccount {
   dimension: total_arr {
     label: "Total ARR"
     type: number
+    value_format: "$#,##0.00;($#,##0.00)"
     sql: ${TABLE}.Total_ARR__c ;;
   }
 
