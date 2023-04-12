@@ -6,6 +6,12 @@ view: salesforceaccount {
     label: "Account ID"
     primary_key: yes
     type: string
+    sql: ${TABLE}.Id ;;
+  }
+
+  dimension: dataloop_account_id {
+    label: "Dataloop Account ID"
+    type: string
     sql: ${TABLE}.Account_Dataloop_ID__c ;;
   }
 
