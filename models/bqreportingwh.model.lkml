@@ -52,7 +52,7 @@ explore: salesforceaccount {
     view_label: "Salesforce Users"
     type: left_outer
     relationship: many_to_one
-    sql_on: ${salesforceaccount.account_id}=${salesforceusers.user_account_id} ;;
+    sql_on: ${salesforceaccount.account_id}=${salesforceusers.user_account_id} and ${salesforceaccount.owner_id}=${salesforceusers.user_id};;
   }
 
   join: salesforcecontacts {
