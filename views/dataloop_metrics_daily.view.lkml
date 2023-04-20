@@ -285,8 +285,8 @@ view: dataloop_metrics_daily {
 
   measure: avg_max_storage_total_persist {
     label: "Average Max Persistent Storage"
-    type: average
-    sql: ROUND(${string_to_num_storage_total_persist}) ;;
+    type: average_distinct
+    sql: ${string_to_num_storage_total_persist} ;;
   }
 
   measure: total_ui_hours_sum {
