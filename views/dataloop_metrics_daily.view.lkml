@@ -286,7 +286,7 @@ view: dataloop_metrics_daily {
   measure: avg_max_storage_total_persist {
     label: "Average Max Persistent Storage"
     type: average
-    sql: ${string_to_num_storage_total_persist} ;;
+    sql: ROUND${string_to_num_storage_total_persist} ;;
   }
 
   measure: total_ui_hours_sum {
@@ -310,19 +310,19 @@ view: dataloop_metrics_daily {
   measure: avg_max_annotations {
     label: "Average Max Annotations"
     type: average
-    sql: ${string_to_num_annotations} ;;
+    sql: ROUND${string_to_num_annotations} ;;
   }
 
   measure: avg_max_items {
     label: "Average Max Items"
     type: average
-    sql: ${string_to_num_items_total} ;;
+    sql: ROUND${string_to_num_items_total} ;;
   }
 
   measure: avg_max_items_annotated {
     label: "Average Max Items Annotated"
     type: average
-    sql: ${string_to_num_items_total_annotated} ;;
+    sql: ROUND${string_to_num_items_total_annotated} ;;
   }
 
   measure: count {
