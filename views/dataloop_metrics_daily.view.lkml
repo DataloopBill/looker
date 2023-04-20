@@ -160,7 +160,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_items_total {
     label: "Max Number of Items"
     type: number
-    sql: CAST(${TABLE}.itemsTotal as INTEGER);;
+    sql: CAST(ROUND(${TABLE}.itemsTotal as INTEGER));;
   }
 
   dimension: items_total_annotated {
@@ -173,7 +173,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_items_total_annotated {
     label: "Max Items Annotated"
     type: number
-    sql: CAST(${TABLE}.itemsTotalAnnotated as INTEGER);;
+    sql: CAST(ROUND(${TABLE}.itemsTotalAnnotated as INTEGER));;
   }
 
   dimension: faas_usage_services {
@@ -214,7 +214,7 @@ view: dataloop_metrics_daily {
   dimension: string_to_num_storage_total_persist {
     label: "Max Storage"
     type: number
-    sql: CAST(${TABLE}.storageTotalPersist as INTEGER);;
+    sql: CAST(ROUND(${TABLE}.storageTotalPersist as INTEGER));;
   }
 
   dimension: yyyy_mm_dd {
@@ -286,7 +286,7 @@ view: dataloop_metrics_daily {
   measure: avg_max_storage_total_persist {
     label: "Average Max Persistent Storage"
     type: average
-    sql: ROUND${string_to_num_storage_total_persist} ;;
+    sql: ${string_to_num_storage_total_persist} ;;
   }
 
   measure: total_ui_hours_sum {
@@ -310,19 +310,19 @@ view: dataloop_metrics_daily {
   measure: avg_max_annotations {
     label: "Average Max Annotations"
     type: average
-    sql: ROUND${string_to_num_annotations} ;;
+    sql: ${string_to_num_annotations} ;;
   }
 
   measure: avg_max_items {
     label: "Average Max Items"
     type: average
-    sql: ROUND${string_to_num_items_total} ;;
+    sql: ${string_to_num_items_total} ;;
   }
 
   measure: avg_max_items_annotated {
     label: "Average Max Items Annotated"
     type: average
-    sql: ROUND${string_to_num_items_total_annotated} ;;
+    sql: ${string_to_num_items_total_annotated} ;;
   }
 
   measure: count {
