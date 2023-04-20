@@ -35,9 +35,8 @@ view: dataloop_metrics_daily {
   }
 
   dimension: string_to_num_annotations {
-    label: "Annotations"
+    label: "Max Annotations"
     type: number
-    hidden: yes
     sql: CAST(${TABLE}.annotations as INTEGER);;
   }
 
@@ -159,9 +158,8 @@ view: dataloop_metrics_daily {
   }
 
   dimension: string_to_num_items_total {
-    label: "Total Items"
+    label: "Max Number of Items"
     type: number
-    hidden: yes
     sql: CAST(${TABLE}.itemsTotal as INTEGER);;
   }
 
@@ -173,9 +171,8 @@ view: dataloop_metrics_daily {
   }
 
   dimension: string_to_num_items_total_annotated {
-    label: "Total Annotated"
+    label: "Max Items Annotated"
     type: number
-    hidden: yes
     sql: CAST(${TABLE}.itemsTotalAnnotated as INTEGER);;
   }
 
@@ -215,9 +212,8 @@ view: dataloop_metrics_daily {
   }
 
   dimension: string_to_num_storage_total_persist {
-    label: "Total Storage"
+    label: "Max Storage"
     type: number
-    hidden: yes
     sql: CAST(${TABLE}.storageTotalPersist as INTEGER);;
   }
 
@@ -287,9 +283,9 @@ view: dataloop_metrics_daily {
     sql: ${string_to_num_faas_usage_global_services} ;;
   }
 
-  measure: total_storage_total_persist {
-    label: "Total Persistent Storage"
-    type: sum
+  measure: avg_max_storage_total_persist {
+    label: "Average Max Persistent Storage"
+    type: average
     sql: ${string_to_num_storage_total_persist} ;;
   }
 
@@ -311,15 +307,21 @@ view: dataloop_metrics_daily {
     sql: ${string_to_num_ui_hours_roles_owner} ;;
   }
 
-  measure: total_annotations {
-    label: "Total Annotations"
-    type: sum
+  measure: avg_max_annotations {
+    label: "Average Max Annotations"
+    type: average
     sql: ${string_to_num_annotations} ;;
   }
 
-  measure: total_items_annotated {
-    label: "Total Items Annotated"
-    type: sum
+  measure: avg_max_items {
+    label: "Average Max Items"
+    type: average
+    sql: ${string_to_num_items_total} ;;
+  }
+
+  measure: avg_max_items_annotated {
+    label: "Average Max Items Annotated"
+    type: average
     sql: ${string_to_num_items_total_annotated} ;;
   }
 
