@@ -284,10 +284,10 @@ view: dataloop_metrics_daily {
   }
 
   measure: avg_max_storage_total_persist {
-    label: "Average Max Persistent Storage"
+    label: "Average Max Persistent Storage in TB"
     type: average_distinct
-    sql: ${string_to_num_storage_total_persist} ;;
-    value_format_name: decimal_1
+    sql: ${string_to_num_storage_total_persist}/1000000 ;;
+    value_format_name: decimal_0
   }
 
   measure: total_ui_hours_sum {
@@ -312,21 +312,21 @@ view: dataloop_metrics_daily {
     label: "Average Max Annotations"
     type: average
     sql: ${string_to_num_annotations} ;;
-    value_format_name: decimal_1
+    value_format_name: decimal_0
   }
 
   measure: avg_max_items {
     label: "Average Max Items"
     type: average
     sql: ${string_to_num_items_total} ;;
-    value_format_name: decimal_1
+    value_format_name: decimal_0
   }
 
   measure: avg_max_items_annotated {
     label: "Average Max Items Annotated"
     type: average
     sql: ${string_to_num_items_total_annotated} ;;
-    value_format_name: decimal_1
+    value_format_name: decimal_0
   }
 
   measure: count {
