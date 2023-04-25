@@ -4,7 +4,7 @@ view: pendo_march_2023_nps_combined_responses {
     dimension: accountid {
       primary_key: yes
       type: string
-      sql: ${TABLE}."accountId" ;;
+      sql: ${TABLE}.accountId ;;
     }
 
     dimension_group: quantitativetime {
@@ -19,22 +19,22 @@ view: pendo_march_2023_nps_combined_responses {
       ]
       convert_tz: no
       datatype: date
-      sql: ${TABLE}."quantitativeTime" ;;
+      sql: ${TABLE}.quantitativeTime ;;
     }
 
     dimension: qualitativeresponse {
       type: string
-      sql: ${TABLE}."qualitativeResponse" ;;
+      sql: ${TABLE}.qualitativeResponse ;;
     }
 
     dimension: quantitativeresponse {
       type: string
-      sql: ${TABLE}."quantitativeResponse" ;;
+      sql: ${TABLE}.quantitativeResponse ;;
     }
 
     dimension: visitorid {
       type: string
-      sql: ${TABLE}."visitorId" ;;
+      sql: ${TABLE}.visitorId ;;
     }
 
     dimension: promoters {
