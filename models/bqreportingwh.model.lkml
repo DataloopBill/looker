@@ -33,13 +33,13 @@ explore: pendo_march_2023_nps_combined_responses {
   join: pendo_accounts {
     type: left_outer
     sql_on: ${pendo_march_2023_nps_combined_responses.accountid} = ${pendo_accounts.account_id} ;;
-    relationship: many_to_one
+    relationship: one_to_many
   }
 
   join: pendo_visitors {
     type: left_outer
     sql_on: ${pendo_march_2023_nps_combined_responses.visitorid} = ${pendo_visitors.visitor_id} ;;
-    relationship: many_to_one
+    relationship: one_to_many
   }
 }
 
