@@ -2,7 +2,7 @@ view: pendo_march_2023_nps_combined_responses {
     sql_table_name: pendo_data.pendoMarch2023NPS ;;
 
     dimension: accountid {
-      primary_key: yes
+#      primary_key: yes
       type: string
       sql: ${TABLE}.accountId ;;
     }
