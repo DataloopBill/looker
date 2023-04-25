@@ -1,8 +1,13 @@
 view: pendo_march_2023_nps_combined_responses {
     sql_table_name: pendo_data.pendoMarch2023NPS ;;
 
+  dimension: pk {
+    hidden: yes
+    primary_key: yes
+    sql: CONCAT(${TABLE}.accountId,${TABLE}.visitorId) ;;
+  }
+
     dimension: accountid {
-#      primary_key: yes
       type: string
       sql: ${TABLE}.accountId ;;
     }
