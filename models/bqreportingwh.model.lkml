@@ -30,11 +30,11 @@ persist_with: bqreportingwh_default_datagroup
 
 explore: pendo_march_2023_nps_combined_responses {
   label: "Pendo March 2023 NPS"
-  join: pendo_accounts {
-    type: left_outer
-    sql_on: ${pendo_march_2023_nps_combined_responses.accountid} = ${pendo_accounts.account_id} ;;
-    relationship: one_to_many
-  }
+#  join: pendo_accounts {
+#    type: left_outer
+#    sql_on: ${pendo_march_2023_nps_combined_responses.accountid} = ${pendo_accounts.account_id} ;;
+#    relationship: one_to_many
+#  }
 
   join: pendo_visitors {
     type: left_outer
