@@ -28,6 +28,21 @@ persist_with: bqreportingwh_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
+explore: pendo_march_2023_nps_combined_responses {
+  label: "Pendo March 2023 NPS"
+  join: pendo_accounts {
+    type: left_outer
+    sql_on: ${pendo_march_2023_nps_combined_responses.accountid} = ${pendo_accounts.account_id} ;;
+    relationship: many_to_one
+  }
+
+  join: pendo_visitors {
+    type: left_outer
+    sql_on: ${pendo_march_2023_nps_combined_responses.visitorid} = ${pendo_visitors.visitor_id} ;;
+    relationship: many_to_one
+  }
+}
+
 explore: events {
   label: "Pendo Events"
 
