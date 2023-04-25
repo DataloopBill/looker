@@ -285,7 +285,7 @@ view: dataloop_metrics_daily {
 
   measure: avg_max_storage_total_persist {
     label: "Average Max Persistent Storage in Bytes"
-    type: average_distinct
+    type: average
     sql: ${string_to_num_storage_total_persist};;
     value_format_name: decimal_0
   }
