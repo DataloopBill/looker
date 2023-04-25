@@ -28,7 +28,7 @@ view: pendo_march_2023_nps_combined_responses {
     }
 
     dimension: quantitativeresponse {
-      type: string
+      type: number
       sql: ${TABLE}.quantitativeResponse ;;
     }
 
