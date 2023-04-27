@@ -5,7 +5,7 @@ view: events {
                   max(day) over (partition by visitorId, accountId) as lastvisit_user,
                   min(day) over (partition by accountId) as firstvisit_account,
                   max(day) over (partition by accountId) as lastvisit_account,
-                  sum(case when day >= DATEADD(day,-60,CURRENT_DATE()) then 1 else 0 end) over (partition by visitorId, accountId) as days_active_last60,
+                  sum(case when TO_DATE(day) >= DATE_ADD(day,-60,CURRENT_DATE()) then 1 else 0 end) over (partition by visitorId, accountId) as days_active_last60,
                   random() as pk
           from pendo_data.pendoEvents a ;;
   }
