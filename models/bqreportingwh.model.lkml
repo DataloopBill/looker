@@ -43,22 +43,22 @@ explore: pendo_march_2023_nps_combined_responses {
   }
 }
 
-explore: events {
-  label: "Pendo Events"
+# explore: events {
+#  label: "Pendo Events"
 
-  join: pendo_activeuser_view {
-    view_label: "Pendo Active User View"
-    relationship: many_to_one
-    sql_on: ${events.accountid}=${pendo_activeuser_view.accountid} and ${events.visitorid}=${pendo_activeuser_view.visitorid}  ;;
-  }
+#  join: pendo_activeuser_view {
+#    view_label: "Pendo Active User View"
+#    relationship: many_to_one
+#    sql_on: ${events.accountid}=${pendo_activeuser_view.accountid} and ${events.visitorid}=${pendo_activeuser_view.visitorid}  ;;
+#  }
 
-  join: pendo_activeaccount_view {
-    view_label: "Pendo Active Account View"
-    relationship: many_to_one
-    sql_on: ${events.accountid}=${pendo_activeaccount_view.accountid} ;;
-  }
+#  join: pendo_activeaccount_view {
+#    view_label: "Pendo Active Account View"
+#    relationship: many_to_one
+#    sql_on: ${events.accountid}=${pendo_activeaccount_view.accountid} ;;
+#  }
 
-}
+#}
 
 explore: salesforceaccount {
   label: "Salesforce Accounts"
